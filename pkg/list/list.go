@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"io"
 
-	repl "github.com/brown-csci-1270-fall-2021/db/pkg/repl"
+	repl "github.com/brown-csci1270/db/pkg/repl"
 )
 
 // List struct.

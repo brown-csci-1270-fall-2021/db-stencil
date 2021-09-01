@@ -1,4 +1,4 @@
-module github.com/brown-csci-1270-fall-2021/db
+module github.com/brown-csci1270/db
 
 go 1.13
 
