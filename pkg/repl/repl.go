@@ -26,6 +26,16 @@ func CombineRepls(repls []REPL) (REPL, error) {
 	panic("function not yet implemented");
 }
 
+// Get commands
+func (r *REPL) GetCommands() map[string]func(string, io.Writer) error {
+	return r.commands
+}
+
+// Get help
+func (r *REPL) GetHelp() map[string]string {
+	return r.help
+}
+
 // Add a command to the set of commands.
 func (r *REPL) AddCommand(trigger string, action func(string, io.Writer) error, help string) {
 	panic("function not yet implemented");
@@ -52,6 +62,7 @@ func (r *REPL) Run(c net.Conn, prompt string) {
 	// Begin the repl loop
 	panic("function not yet implemented");
 }
+
 // cleanInput preprocesses input to the db repl
 func cleanInput(text string) string {
 	panic("function not yet implemented");

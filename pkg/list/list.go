@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"strings"
 
 	repl "github.com/brown-csci1270/db/pkg/repl"
 )
@@ -65,6 +66,21 @@ func (link *Link) GetList() *List {
 
 // Get the link's value.
 func (link *Link) GetKey() interface{} {
+	panic("function not yet implemented");
+}
+
+// Set the link's value.
+func (link *Link) SetKey(value interface{}) {
+	panic("function not yet implemented");
+}
+
+// Get the link's prev.
+func (link *Link) GetPrev() *Link {
+	panic("function not yet implemented");
+}
+
+// Get the link's next.
+func (link *Link) GetNext() *Link {
 	panic("function not yet implemented");
 }
 
