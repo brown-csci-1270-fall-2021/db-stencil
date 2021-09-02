@@ -16,7 +16,7 @@ type List struct {
 }
 
 // Create a new list.
-func NewList() List {
+func NewList() *List {
 	panic("function not yet implemented");
 }
 
@@ -30,23 +30,22 @@ func (list *List) PeekTail() *Link {
 	panic("function not yet implemented");
 }
 
-// Add an element to the front of the list.
-func (list *List) PushHead(value interface{}) {
+// Add an element to the front of the list. Returns the added link.
+func (list *List) PushHead(value interface{}) *Link {
 	panic("function not yet implemented");
 }
 
-// Add an element to the end of the list.
+// Add an element to the end of the list. Returns the added link.
 func (list *List) PushTail(value interface{}) *Link {
 	panic("function not yet implemented");
 }
 
-// Find an element in the list.
+// Find an element in a list given a boolean function, f, that evaluates to true on the desired element.
 func (list *List) Find(f func(*Link) bool) *Link {
 	panic("function not yet implemented");
 }
 
-// Apply a function to every element in the list.
-// f should alter Link in place.
+// Apply a function to every element in the list. f should alter Link in place.
 func (list *List) Map(f func(*Link)) {
 	panic("function not yet implemented");
 }
@@ -90,6 +89,6 @@ func (link *Link) PopSelf() {
 }
 
 // List REPL.
-func ListRepl(list *List) repl.REPL {
+func ListRepl(list *List) *repl.REPL {
 	panic("function not yet implemented");
 }

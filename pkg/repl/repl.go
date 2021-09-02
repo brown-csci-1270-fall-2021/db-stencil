@@ -17,12 +17,12 @@ type REPL struct {
 }
 
 // Constructs an empty REPL.
-func NewRepl() REPL {
+func NewRepl() *REPL {
 	panic("function not yet implemented");
 }
 
 // Combines a slice of REPLs.
-func CombineRepls(repls []REPL) (REPL, error) {
+func CombineRepls(repls []*REPL) (*REPL, error) {
 	panic("function not yet implemented");
 }
 
@@ -41,8 +41,8 @@ func (r *REPL) AddCommand(trigger string, action func(string, io.Writer) error, 
 	panic("function not yet implemented");
 }
 
-// Print out all REPL usage information.
-func (r *REPL) PrintHelp() string {
+// Return all REPL usage information as a string.
+func (r *REPL) HelpString() string {
 	panic("function not yet implemented");
 }
 
