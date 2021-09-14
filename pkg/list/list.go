@@ -20,17 +20,17 @@ func NewList() *List {
 	panic("function not yet implemented");
 }
 
-// Return the first element of the list.
+// Get a pointer to the head of the list.
 func (list *List) PeekHead() *Link {
 	panic("function not yet implemented");
 }
 
-// Return the last element of the list.
+// Get a pointer to the tail of the list.
 func (list *List) PeekTail() *Link {
 	panic("function not yet implemented");
 }
 
-// Add an element to the front of the list. Returns the added link.
+// Add an element to the start of the list. Returns the added link.
 func (list *List) PushHead(value interface{}) *Link {
 	panic("function not yet implemented");
 }

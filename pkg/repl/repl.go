@@ -8,15 +8,33 @@ import (
 	"net"
 	"os"
 	"strings"
+
+	uuid "github.com/google/uuid"
 )
 
 // REPL struct.
 type REPL struct {
-	commands map[string]func(string, io.Writer) error
+	commands map[string]func(string, *REPLConfig) error
 	help     map[string]string
 }
 
-// Constructs an empty REPL.
+// REPL Config struct.
+type REPLConfig struct {
+	writer   io.Writer
+	clientId uuid.UUID
+}
+
+// Get writer.
+func (replConfig *REPLConfig) GetWriter() io.Writer {
+	return replConfig.writer
+}
+
+// Get address.
+func (replConfig *REPLConfig) GetAddr() uuid.UUID {
+	return replConfig.clientId
+}
+
+// Construct an empty REPL.
 func NewRepl() *REPL {
 	panic("function not yet implemented");
 }
@@ -26,18 +44,18 @@ func CombineRepls(repls []*REPL) (*REPL, error) {
 	panic("function not yet implemented");
 }
 
-// Get commands
-func (r *REPL) GetCommands() map[string]func(string, io.Writer) error {
+// Get commands.
+func (r *REPL) GetCommands() map[string]func(string, *REPLConfig) error {
 	return r.commands
 }
 
-// Get help
+// Get help.
 func (r *REPL) GetHelp() map[string]string {
 	return r.help
 }
 
-// Add a command to the set of commands.
-func (r *REPL) AddCommand(trigger string, action func(string, io.Writer) error, help string) {
+// Add a command, along with its help string, to the set of commands.
+func (r *REPL) AddCommand(trigger string, action func(string, *REPLConfig) error, help string) {
 	panic("function not yet implemented");
 }
 
@@ -47,7 +65,7 @@ func (r *REPL) HelpString() string {
 }
 
 // Run the REPL.
-func (r *REPL) Run(c net.Conn, prompt string) {
+func (r *REPL) Run(c net.Conn, clientId uuid.UUID, prompt string) {
 	// Get reader and writer; stdin and stdout if no conn.
 	var reader io.Reader
 	var writer io.Writer
@@ -59,11 +77,12 @@ func (r *REPL) Run(c net.Conn, prompt string) {
 		writer = c
 	}
 	scanner := bufio.NewScanner((reader))
-	// Begin the repl loop
+	replConfig := &REPLConfig{writer: writer, clientId: clientId}
+	// Begin the repl loop!
 	panic("function not yet implemented");
 }
 
-// cleanInput preprocesses input to the db repl
+// cleanInput preprocesses input to the db repl.
 func cleanInput(text string) string {
 	panic("function not yet implemented");
 }
