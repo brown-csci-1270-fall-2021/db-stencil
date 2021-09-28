@@ -61,7 +61,11 @@ func (r *REPL) AddCommand(trigger string, action func(string, *REPLConfig) error
 
 // Return all REPL usage information as a string.
 func (r *REPL) HelpString() string {
-	panic("function not yet implemented");
+	var sb strings.Builder
+	for k, v := range r.help {
+		sb.WriteString(fmt.Sprintf("%s: %s\n", k, v))
+	}
+	return sb.String()
 }
 
 // Run the REPL.
@@ -84,5 +88,7 @@ func (r *REPL) Run(c net.Conn, clientId uuid.UUID, prompt string) {
 
 // cleanInput preprocesses input to the db repl.
 func cleanInput(text string) string {
-	panic("function not yet implemented");
+	output := strings.TrimSpace(text)
+	output = strings.ToLower(output)
+	return output
 }
