@@ -107,7 +107,7 @@ func main() {
 
 	// [CONCURRENCY]
 	// var tm *concurrency.TransactionManager
-	// server := false
+	server := false
 
 	// [RECOVERY]
 	// var rm *recovery.RecoveryManager
@@ -168,13 +168,12 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	r.Run(nil, uuid.New(), prompt)
 
-	// [CONCURRENCY]
-	// // Start server if server (concurrency or recovery), else run REPL here.
-	// if server {
+	// Start server if server (concurrency or recovery), else run REPL here.
+	if server {
+	// 	[CONCURRENCY]
 	// 	startServer(r, tm, prompt, *portFlag)
-	// } else {
-	// 	r.Run(nil, uuid.New(), prompt)
-	// }
+	} else {
+		r.Run(nil, uuid.New(), prompt)
+	}
 }
