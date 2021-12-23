@@ -12,7 +12,7 @@ import (
 	config "github.com/brown-csci1270/db/pkg/config"
 	repl "github.com/brown-csci1270/db/pkg/repl"
 	list "github.com/brown-csci1270/db/pkg/list"
-	pager "github.com/brown-csci1270/db/pkg/pager"
+	// pager "github.com/brown-csci1270/db/pkg/pager"
 	// db "github.com/brown-csci1270/db/pkg/db"
 	// query "github.com/brown-csci1270/db/pkg/query"
 	// concurrency "github.com/brown-csci1270/db/pkg/concurrency"
@@ -117,13 +117,15 @@ func main() {
 	case "go":
 		l := list.NewList()
 		repls = append(repls, list.ListRepl(l))
-	case "pager":
-		pRepl, err := pager.PagerRepl()
-		if err != nil {
-			fmt.Println(err)
-			return
-		}
-		repls = append(repls, pRepl)
+
+	// [PAGER]
+	// case "pager":
+	// 	pRepl, err := pager.PagerRepl()
+	// 	if err != nil {
+	// 		fmt.Println(err)
+	// 		return
+	// 	}
+	// 	repls = append(repls, pRepl)
 
 	// [BTREE]
 	// case "db":
