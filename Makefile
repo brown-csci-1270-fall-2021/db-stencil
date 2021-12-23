@@ -4,13 +4,15 @@ all: build
 
 build:
 	go build ./cmd/bumble
+	go build ./cmd/bumble_client
+	go build ./cmd/bumble_stress
 
 clean:
-	rm -f bumble
-	rm -rf data
+	rm -f bumble bumble_client bumble_stress
+	rm -rf data data-recovery db.log snipped zipped
 
 test:
-	go test ./test/* -v
+	go test ./test/* -v -race
 
 bench:
 	go test ./pkg/* -bench=.
@@ -20,6 +22,9 @@ cover:
 
 cover-out:
 	go tool cover -html=coverage.out
+
+format:
+	gofmt -s -w .
 
 docker_build:
 	docker build -t bumblebase .

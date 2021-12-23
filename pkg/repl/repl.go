@@ -86,6 +86,11 @@ func (r *REPL) Run(c net.Conn, clientId uuid.UUID, prompt string) {
 	panic("function not yet implemented");
 }
 
+// Run the REPL.
+func (r *REPL) RunChan(c chan string, clientId uuid.UUID, prompt string) {
+	panic("function not yet implemented");
+}
+
 // cleanInput preprocesses input to the db repl.
 func cleanInput(text string) string {
 	output := strings.TrimSpace(text)
